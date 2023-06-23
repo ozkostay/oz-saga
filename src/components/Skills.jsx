@@ -12,13 +12,13 @@ export default function Skills() {
   };
   const hasQuery = search.trim() !== '';
   return (
-    <>
+    <div>
       <div><input type="search" value={search} onChange={handleSearch}/></div>
       {!hasQuery && <div>Type something to search</div>}
       {hasQuery && loading && <div>searching...</div>}
       {error ? <div>Error occured</div> : <ul>{items.map(
         o => <li key={o.id}>{o.name}</li>
       )}</ul>}
-    </>
+    </div>
   )
 }
